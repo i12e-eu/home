@@ -1,0 +1,88 @@
+:root {
+    color: var(--color-text-primary);
+    background: var(--color-background);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+/* Balance the controls above the content without fixing the page height. */
+body::after {
+    content: "";
+    min-height: 4.5rem;
+}
+
+.page-header {
+    align-self: start;
+}
+
+.page-header .theme-control {
+    grid-column: 1 / -1;
+    justify-self: end;
+}
+
+.landing {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 2rem;
+    width: calc(100% - 48px);
+    max-width: 960px;
+    min-width: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.landing-brand {
+    width: 512px;
+    max-width: 100%;
+    min-width: 0;
+    margin-bottom: 1rem;
+}
+
+/* The shared helper supplies the full artwork's intrinsic aspect ratio. */
+.site-logo {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: var(--logo-aspect-ratio, 22 / 3);
+    border: 0;
+    background: transparent;
+    color-scheme: inherit;
+    pointer-events: none;
+}
+
+.landing .document-title,
+.landing p {
+    margin: 0;
+}
+
+.landing a,
+.landing a:visited {
+    color: var(--color-link);
+    text-decoration: underline;
+}
+
+.landing a:hover {
+    color: var(--color-link-hover);
+    text-decoration-thickness: 2px;
+}
+
+.landing a:active {
+    color: var(--color-link-active);
+}
+
+@media (max-width: 60em) {
+    .landing {
+        width: calc(100% - 36px);
+    }
+}

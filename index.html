@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" data-type-scope="viewport" data-theme="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="color-scheme" content="light dark"/>
+    <script src="https://design.i12e.eu/assets/js/appearance.js?v=plan-appearance-1"
+            data-appearance-storage-key="i12e.home.appearance"></script>
+    <script src="https://design.i12e.eu/assets/js/logo-appearance.js?v=logo-once-1"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="A public reference for European digital infrastructure"/>
+    <title>i12e.eu — European digital infrastructure</title>
+    <link rel="canonical" href="https://infrastructure.eu/"/>
+    <link rel="preconnect" href="https://design.i12e.eu"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;family=Roboto+Mono:wght@400&amp;display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="https://design.i12e.eu/assets/css/colours.css?v=palette-20260911"/>
+    <link rel="stylesheet" href="https://design.i12e.eu/assets/css/typography.css?v=css-type-1-logo-canvas-2"/>
+    <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+<header class="page-header">
+    <div class="theme-control" hidden>
+        <label for="page-appearance">Appearance</label>
+        <select id="page-appearance" autocomplete="off">
+            <option value="light" selected>Light</option>
+            <option value="dark">Dark</option>
+        </select>
+    </div>
+</header>
+<script>
+  (() => {
+    const appearance = document.getElementById("page-appearance");
+    if (!appearance || typeof window.i12eAppearance?.bind !== "function") return;
+    window.i12eAppearance.bind(appearance);
+    appearance.closest(".theme-control").hidden = false;
+  })();
+</script>
+<main class="landing" aria-labelledby="page-title">
+    <div class="landing-brand" role="img" aria-label="i12e.eu">
+        <iframe class="site-logo" data-logo-fit
+                src="https://design.i12e.eu/assets/images/logo.svg?variant=6&amp;v=logo-canvas-2"
+                title="Animated i12e.eu logotype"
+                width="512" height="70" tabindex="-1" aria-hidden="true"></iframe>
+    </div>
+    <h1 class="document-title" id="page-title">A public reference for European digital infrastructure</h1>
+    <p>Read the <a href="https://plan.i12e.eu/master-plan.html">Master Plan</a> and
+        <a href="https://plan.i12e.eu/5w1h.html">5W1H</a> planning documents.</p>
+</main>
+</body>
+</html>
