@@ -10,6 +10,32 @@ this project. The logo uses variant 6 with its default full looping animation;
 the shared SVG handles reduced motion. Appearance choices use the
 `i12e.home.appearance` storage key.
 
+## Asset caching and logo embedding
+
+The homepage stylesheet URL includes a content fingerprint so new HTML cannot
+reuse an older cached layout. After editing `styles.css`, update and check it:
+
+```sh
+python3 scripts/version_styles.py
+python3 scripts/version_styles.py --check
+```
+
+This is a maintenance check, not a site build step. The page remains plain HTML
+and CSS, and the stylesheet is stored only once.
+
+The shared logotype is a scripted SVG document. Its animation and appearance
+messages require a document embed; an `<img>` would disable its JavaScript. The
+iframe reuses the canonical artwork, and the parent supplies its accessible
+name. The shared loading style uses opacity while the SVG validates font metrics
+before reporting its intrinsic size. It retains a static fallback if valid
+measurements are not yet available.
+
+When changing shared design assets, publish and verify those assets **before**
+publishing homepage HTML that references their new versions. The typography and
+SVG `v` values are the first 12 characters of each file's SHA-256 hash. This order
+prevents the old resource being cached under its new URL. Publish HTML and its
+local stylesheet together; do not remove or rename the canonical CSS or SVG.
+
 ## Publishing
 
 The repository is prepared for `https://infrastructure.eu/`. Adding `CNAME` alone
@@ -69,15 +95,13 @@ subdomains and all unrelated records.
 
 See [GitHub's domain constraints](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages).
 
-## Validation status
+## Validation
 
-The HTML, links, canonical domain, external resource responses, and script syntax
-were checked. Desktop and 320px layouts, Light/Dark selection, persistence after
-reload, and keyboard focus were checked in the in-app browser.
+Preview homepage and shared-design changes together, using separate origins for
+the parent and SVG as in production. Check a complete animation loop, initial
+loading and repeated reloads, appearance changes, reduced-motion rendering, and
+320px layout. Verify that the logo reports nonzero text metrics and keeps its
+full animation canvas, and run the stylesheet version check above.
 
-The standalone SVG animated successfully, but the iframe remained hidden behind
-the shared readiness gate in the local browser preview. That integration check
-remains unresolved; do not treat this as a verified animation embed. Deeper
-browser diagnostics were denied. Reduced-motion and JavaScript-disabled behavior
-were inspected in the shared source, but have not been verified in a browser.
-Live-domain verification is pending publication and DNS setup.
+After publication, verify the exact versioned URLs from `index.html` against the
+released files. A successful local preview does not verify the deployed cache.
