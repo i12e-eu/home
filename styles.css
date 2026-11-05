@@ -14,12 +14,6 @@ body {
     min-height: 100svh;
 }
 
-/* Balance the controls above the content without fixing the page height. */
-body::after {
-    content: "";
-    min-height: 4.5rem;
-}
-
 .page-header {
     align-self: start;
 }
@@ -94,8 +88,70 @@ body::after {
     background: var(--color-button-primary-active);
 }
 
+.page-footer {
+    align-self: end;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 2rem;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 2rem 24px 1.5rem;
+    color: var(--color-text-secondary);
+    font: var(--type-ui-meta);
+    text-align: left;
+}
+
+.page-footer p,
+.page-footer address {
+    margin: 0;
+    font-style: normal;
+}
+
+.page-footer strong {
+    font-weight: var(--weight-heading);
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5rem 1rem;
+}
+
+.page-footer a,
+.page-footer a:visited {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.5rem;
+    max-width: 100%;
+    color: var(--color-text-secondary);
+    text-decoration: underline;
+}
+
+.page-footer a:hover {
+    color: var(--color-link-hover);
+    text-decoration-thickness: 2px;
+}
+
+.page-footer a:active {
+    color: var(--color-link-active);
+}
+
 @media (max-width: 60em) {
     .landing {
         width: calc(100% - 36px);
+    }
+
+    .page-footer {
+        padding-inline: 18px;
+    }
+}
+
+@media (max-width: 40em) {
+    .page-footer {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
     }
 }
