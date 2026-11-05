@@ -1,0 +1,122 @@
+/* Keep the SVG measurable while its font and selected theme are loading. */
+[data-logo-loading] .terms-page .site-logo:not([data-logo-ready]) {
+    visibility: visible;
+    opacity: 0;
+}
+
+.terms-document {
+    --measure: 100%;
+    flex-shrink: 0;
+    width: calc(100% - 48px);
+    max-width: 1120px;
+    min-width: 0;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}
+
+.terms-document .document-header {
+    margin-bottom: 2rem;
+}
+
+.terms-document .updated {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font: var(--type-ui-meta);
+}
+
+.terms-document address {
+    margin-bottom: 1em;
+    font-style: normal;
+}
+
+.terms-document section + section {
+    margin-top: 2.5em;
+}
+
+.terms-document section {
+    scroll-margin-top: 1.5rem;
+}
+
+.terms-document a,
+.terms-document a:visited,
+.terms-page .skip-link {
+    color: var(--color-link);
+    text-decoration: underline;
+}
+
+.terms-document a:hover {
+    color: var(--color-link-hover);
+    text-decoration-thickness: 2px;
+}
+
+.terms-document a:active {
+    color: var(--color-link-active);
+}
+
+.terms-page .skip-link {
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    z-index: 1;
+    padding: 0.5rem 0.75rem;
+    background: var(--color-background);
+    transform: translateY(-200%);
+}
+
+.terms-page .skip-link:focus {
+    transform: translateY(0);
+}
+
+.terms-page :focus-visible {
+    outline: 2px solid var(--color-link);
+    outline-offset: 3px;
+}
+
+@media (max-width: 60em) {
+    .terms-document {
+        width: calc(100% - 36px);
+    }
+}
+
+@media print {
+    :root:has(.terms-page) {
+        color-scheme: light;
+        --color-background: #FFFFFF;
+        --color-text-primary: #191919;
+        --color-text-secondary: #505050;
+        --color-link: #0E47CB;
+        --type-progress: 0;
+        color: var(--color-text-primary);
+        background: var(--color-background);
+    }
+
+    .terms-document {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+    }
+
+    /* The SVG measures its text after loading; keep its hidden frame measurable. */
+    .terms-page .page-header {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .terms-page .page-footer,
+    .terms-page .skip-link {
+        display: none;
+    }
+
+    .terms-page :focus-visible {
+        outline: none;
+    }
+
+    .terms-document :is(h1, h2) {
+        break-after: avoid;
+    }
+
+    .terms-document p {
+        orphans: 3;
+        widows: 3;
+    }
+}

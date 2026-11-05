@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-type-scope="viewport" data-theme="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="color-scheme" content="light dark"/>
+    <script src="https://design.i12e.eu/assets/js/appearance.js?v=plan-appearance-1"
+            data-appearance-storage-key="i12e.home.appearance"></script>
+    <script src="https://design.i12e.eu/assets/js/logo-appearance.js?v=logo-once-1"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Terms for one-off donations supporting the European Digital Infrastructure Foundation."/>
+    <meta name="referrer" content="no-referrer"/>
+    <title>Terms of use — European Digital Infrastructure Foundation</title>
+    <link rel="canonical" href="https://infrastructure.eu/terms"/>
+    <link rel="preconnect" href="https://design.i12e.eu"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;family=Roboto+Mono:wght@400&amp;display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="https://design.i12e.eu/assets/css/colours.css?v=palette-20260911"/>
+    <link rel="stylesheet" href="https://design.i12e.eu/assets/css/typography.css?v=css-type-1-logo-canvas-2"/>
+    <link rel="stylesheet" href="./styles.css"/>
+    <link rel="stylesheet" href="./terms.css"/>
+</head>
+<body class="terms-page">
+<a class="skip-link" href="#terms">Skip to terms of use</a>
+<header class="page-header">
+    <div class="brand">
+        <iframe class="site-logo" data-logo-fit
+                src="https://design.i12e.eu/assets/images/logo.svg?variant=6&amp;alignment=left&amp;v=logo-alignment-1"
+                title="Animated i12e.eu logotype"
+                width="256" height="35" tabindex="-1" aria-hidden="true"></iframe>
+        <a class="brand-link" href="/" aria-label="i12e.eu — Home"></a>
+    </div>
+    <div class="page-tools">
+        <nav class="page-nav" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="https://plan.i12e.eu/">About EDIF</a>
+            <a href="/articles/index.html">Articles</a>
+        </nav>
+        <div class="theme-control" hidden>
+            <label for="page-appearance">Appearance</label>
+            <select id="page-appearance" autocomplete="off">
+                <option value="light" selected>Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+    </div>
+</header>
+<script>
+  (() => {
+    const appearance = document.getElementById("page-appearance");
+    if (!appearance || typeof window.i12eAppearance?.bind !== "function") return;
+    window.i12eAppearance.bind(appearance);
+    appearance.closest(".theme-control").hidden = false;
+  })();
+</script>
+<main class="terms-document" id="terms" aria-labelledby="page-title" tabindex="-1">
+    <header class="document-header">
+        <h1 class="document-title" id="page-title">Terms of use</h1>
+        <p class="updated">Last updated: <time datetime="2026-11-05">5 November 2026</time></p>
+    </header>
+
+    <section aria-labelledby="scope">
+        <h2 id="scope">1. Recipient and scope</h2>
+        <p><strong>European Digital Infrastructure Foundation</strong><br/>
+            <strong>Stichting i12e.eu</strong></p>
+        <address>
+            Professor Snijdersstraat 2<br/>
+            2628 RA Delft, Netherlands
+        </address>
+        <p><a href="mailto:hello@infrastructure.eu">hello@infrastructure.eu</a></p>
+        <p>These terms cover one-off donations made to the foundation through Mollie Payment Links on
+            infrastructure.eu. “We”, “us”, and “our” refer to the foundation.</p>
+    </section>
+
+    <section aria-labelledby="donations">
+        <h2 id="donations">2. Donations and independence</h2>
+        <p>Donations are voluntary gifts supporting our purpose: advancing European digital sovereignty
+            for the public benefit through independent research and openly reusable knowledge about digital
+            infrastructure. They provide general support, including reasonable operating and administrative
+            costs, and are not earmarked for a particular project. A donation does not purchase goods or
+            services or commit you to further payments.</p>
+        <p>Financial support gives no preferential treatment or right to determine research findings,
+            approve publication, or prevent publication. A donation does not guarantee a particular project
+            outcome or delivery date. We make no claim that donations are tax-deductible.</p>
+    </section>
+
+    <section aria-labelledby="payments">
+        <h2 id="payments">3. Payments and refunds</h2>
+        <p>Payments are processed through <a href="https://www.mollie.com/consumers">Mollie</a>.
+            Check the amount and currency shown at checkout before confirming your payment. The foundation
+            is the recipient of your donation; Mollie provides the payment service. Please contact
+            <a href="mailto:finance@infrastructure.eu">finance@infrastructure.eu</a> about donation questions
+            or refund requests.</p>
+        <p>We may decline donations that are incompatible with our purpose or articles of association.
+            We will return payments where required by law. A change of mind does not, by itself, create
+            a right to a refund.</p>
+        <p>If you believe a payment was mistaken, duplicated, or unauthorised, contact
+            <a href="mailto:finance@infrastructure.eu">finance@infrastructure.eu</a> promptly, giving the
+            payment date, amount, and reference where available. For suspected unauthorised payments, also
+            notify your bank or payment provider promptly. These terms do not limit any applicable refund
+            or payment-dispute rights. You may use the same email address for donation-related complaints.</p>
+    </section>
+
+    <section aria-labelledby="funding-transparency">
+        <h2 id="funding-transparency">4. Funding transparency</h2>
+        <p>We publish the identities of organisations that fund us, together with the amounts, dates,
+            purposes, material conditions, and funding agreements. Information may be withheld, redacted,
+            or delayed only where necessary for legal obligations, privacy, third-party rights, or a
+            specific, substantiated security risk.</p>
+        <p>We publish individual donors’ names only with their consent. Their donations remain included
+            in our published financial totals.</p>
+    </section>
+
+    <section aria-labelledby="privacy">
+        <h2 id="privacy">5. Privacy</h2>
+        <p>Our <a href="/privacy">privacy policy</a> explains how we handle website, correspondence,
+            and donation information. <a href="https://www.mollie.com/legal/privacy">Mollie’s privacy
+            statement</a> explains its payment processing.</p>
+    </section>
+</main>
+<footer class="page-footer">
+    <div class="footer-details">
+        <p><strong>European Digital Infrastructure Foundation</strong><br/>Stichting i12e.eu</p>
+        <p><a href="mailto:hello@infrastructure.eu">hello@infrastructure.eu</a></p>
+    </div>
+    <div class="footer-contact">
+        <address>
+            Prof. Snijdersstraat 2<br/>
+            2628 RA Delft<br/>
+            Netherlands
+        </address>
+        <nav class="footer-links" aria-label="Legal">
+            <a href="/privacy">Privacy</a>
+            <a href="/terms" aria-current="page">Terms</a>
+            <a href="./articles/index.html">Articles</a>
+        </nav>
+    </div>
+</footer>
+</body>
+</html>
