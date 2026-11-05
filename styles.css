@@ -41,21 +41,26 @@ body {
 
 .landing .document-title {
     margin: 0;
-    font-size: var(--type-h2);
+    font-size: 2.5rem;
 }
 
 .mission-row {
     display: grid;
+    grid-template-areas: "summary mission";
     grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
-    align-items: start;
+    align-items: stretch;
     gap: 1.5rem;
 }
 
 .mission-summary {
-    display: grid;
-    align-content: start;
-    gap: 0.75rem;
+    grid-area: summary;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
     min-width: 0;
+    padding-inline-end: 0.75rem;
+    border-inline-end: 6px solid var(--color-border);
 }
 
 .mission-summary h2 {
@@ -64,6 +69,7 @@ body {
 }
 
 .mission {
+    grid-area: mission;
     max-width: none;
     min-width: 0;
     margin: 0;
@@ -74,7 +80,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 12px 24px;
+    gap: 12px;
     max-width: 100%;
 }
 
@@ -171,6 +177,12 @@ body {
     color: var(--color-link-active);
 }
 
+@media (max-width: 70em) {
+    .landing .document-title {
+        font-size: 2rem;
+    }
+}
+
 @media (max-width: 60em) {
     .landing {
         width: calc(100% - 36px);
@@ -183,7 +195,15 @@ body {
 
 @media (max-width: 48em) {
     .mission-row {
+        grid-template-areas: "mission" "summary";
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mission-summary {
+        padding-block-start: 1.5rem;
+        padding-inline-end: 0;
+        border-block-start: 6px solid var(--color-border);
+        border-inline-end: 0;
     }
 }
 
