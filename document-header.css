@@ -1,0 +1,25 @@
+/* Keep document navigation in one row without changing shared or print styles. */
+@media screen {
+    .page-header--document {
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+    }
+
+    .page-header--document .page-tools {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-self: end;
+        gap: 1rem;
+    }
+
+    .page-header--document .page-nav {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .page-header--document .theme-control {
+        flex-wrap: nowrap;
+    }
+}
