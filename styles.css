@@ -65,6 +65,49 @@ body {
     text-wrap: balance;
 }
 
+.mission {
+    max-width: 62ch;
+    margin: 0;
+}
+
+/* Informational notice from the design library's Colours reference. */
+.notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border-inline-start: 3px solid var(--notice-accent);
+    font: var(--type-ui-meta);
+}
+
+.notice-content {
+    min-width: 0;
+}
+
+.notice p {
+    margin: 0;
+}
+
+.notice-icon {
+    display: block;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    margin-block-start: 1px;
+    color: var(--notice-accent);
+}
+
+.notice.info {
+    --notice-accent: var(--color-border-info);
+    color: var(--color-text-info);
+    background: var(--color-background-info);
+}
+
+.launch-notice {
+    max-width: 100%;
+    text-align: left;
+}
+
 .planning-link {
     display: inline-flex;
     align-items: center;
