@@ -194,6 +194,14 @@ body {
 }
 
 @media (max-width: 48em) {
+    .page-header .theme-control {
+        display: none;
+    }
+
+    .page-header .page-tools {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
     .mission-row {
         grid-template-areas: "mission" "summary";
         grid-template-columns: minmax(0, 1fr);
