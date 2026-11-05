@@ -9,7 +9,7 @@
 
 body {
     display: grid;
-    grid-template-rows: 1fr auto 1fr;
+    grid-template-rows: auto 1fr auto;
     min-height: 100vh;
     min-height: 100svh;
 }
@@ -19,11 +19,11 @@ body {
 }
 
 .page-header .theme-control {
-    grid-column: 1 / -1;
     justify-self: end;
 }
 
 .landing {
+    align-self: center;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     justify-items: center;
@@ -35,33 +35,8 @@ body {
     text-align: center;
 }
 
-.landing-brand {
-    width: 256px;
-    max-width: 100%;
-    min-width: 0;
-}
-
-/* The shared helper supplies the full artwork's intrinsic aspect ratio. */
-.site-logo {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: var(--logo-aspect-ratio, 22 / 3);
-    border: 0;
-    background: transparent;
-    color-scheme: inherit;
-    pointer-events: none;
-}
-
 .landing .document-title {
-    margin: 0 0 0.75rem;
-    text-wrap: balance;
-}
-
-.subtitle {
-    margin: 0 auto;
-    color: var(--color-text-secondary);
+    margin: 0;
     text-wrap: balance;
 }
 
@@ -70,45 +45,22 @@ body {
     margin: 0;
 }
 
-/* Informational notice from the design library's Colours reference. */
-.notice {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 16px;
-    border-inline-start: 3px solid var(--notice-accent);
+.launch-notice {
+    margin: 0;
+    color: var(--color-text-secondary);
     font: var(--type-ui-meta);
 }
 
-.notice-content {
-    min-width: 0;
-}
-
-.notice p {
-    margin: 0;
-}
-
-.notice-icon {
-    display: block;
-    flex: 0 0 20px;
-    width: 20px;
-    height: 20px;
-    margin-block-start: 1px;
-    color: var(--notice-accent);
-}
-
-.notice.info {
-    --notice-accent: var(--color-border-info);
-    color: var(--color-text-info);
-    background: var(--color-background-info);
-}
-
-.launch-notice {
+.button-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 24px;
     max-width: 100%;
-    text-align: left;
 }
 
-.planning-link {
+.landing-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -123,12 +75,26 @@ body {
     text-decoration: none;
 }
 
-.planning-link:hover {
+.landing-button:hover {
     background: var(--color-button-primary-hover);
 }
 
-.planning-link:active {
+.landing-button:active {
     background: var(--color-button-primary-active);
+}
+
+.landing-button--neutral {
+    border-color: var(--color-border-control);
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+}
+
+.landing-button--neutral:hover {
+    background: var(--color-background);
+}
+
+.landing-button--neutral:active {
+    background: var(--color-border);
 }
 
 .page-footer {
@@ -140,7 +106,7 @@ body {
     width: 100%;
     min-width: 0;
     margin: 0;
-    padding: 2rem 24px 1.5rem;
+    padding: 6rem 24px 1.5rem;
     color: var(--color-text-secondary);
     font: var(--type-ui-meta);
     text-align: left;
@@ -154,6 +120,12 @@ body {
 
 .page-footer strong {
     font-weight: var(--weight-heading);
+}
+
+.footer-details,
+.footer-contact {
+    display: grid;
+    gap: 0.5rem;
 }
 
 .footer-links {
@@ -196,5 +168,6 @@ body {
     .page-footer {
         grid-template-columns: minmax(0, 1fr);
         gap: 1rem;
+        padding-block-start: 4rem;
     }
 }
