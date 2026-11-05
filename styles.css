@@ -213,6 +213,10 @@ body {
         border-block-start: 6px solid var(--color-border);
         border-inline-end: 0;
     }
+
+    .page-footer {
+        padding-block-start: 4rem;
+    }
 }
 
 @media (max-width: 40em) {
