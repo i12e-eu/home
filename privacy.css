@@ -1,0 +1,152 @@
+/* Keep the SVG measurable while its font and selected theme are loading. */
+[data-logo-loading] .privacy-page .site-logo:not([data-logo-ready]) {
+    visibility: visible;
+    opacity: 0;
+}
+
+.privacy-document {
+    --measure: 100%;
+    flex-shrink: 0;
+    width: calc(100% - 48px);
+    max-width: 1120px;
+    min-width: 0;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}
+
+.privacy-document .document-header {
+    margin-bottom: 2rem;
+}
+
+.privacy-document .updated {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font: var(--type-ui-meta);
+}
+
+.privacy-document address {
+    margin-bottom: 1em;
+    font-style: normal;
+}
+
+.privacy-document dt {
+    margin-bottom: 0.15em;
+    font-weight: var(--weight-strong);
+}
+
+.privacy-document dd {
+    margin: 0 0 1em;
+}
+
+.privacy-document section + section {
+    margin-top: 2.5em;
+}
+
+.privacy-document section {
+    scroll-margin-top: 1.5rem;
+}
+
+.privacy-document .contents {
+    margin: 2rem 0 2.5rem;
+    padding: 1.25rem 0;
+    border-block: 1px solid var(--color-border);
+}
+
+.privacy-document .contents p {
+    margin-bottom: 0.5rem;
+    font-weight: var(--weight-heading);
+}
+
+.privacy-document .contents ol {
+    margin-bottom: 0;
+}
+
+.privacy-document .contents li {
+    margin-bottom: 0.1em;
+}
+
+.privacy-document .contents a {
+    display: block;
+    padding-block: 0.15rem;
+}
+
+.privacy-document a,
+.privacy-document a:visited,
+.privacy-page .skip-link {
+    color: var(--color-link);
+    text-decoration: underline;
+}
+
+.privacy-document a:hover {
+    color: var(--color-link-hover);
+    text-decoration-thickness: 2px;
+}
+
+.privacy-document a:active {
+    color: var(--color-link-active);
+}
+
+.privacy-page .skip-link {
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    z-index: 1;
+    padding: 0.5rem 0.75rem;
+    background: var(--color-background);
+    transform: translateY(-200%);
+}
+
+.privacy-page .skip-link:focus {
+    transform: translateY(0);
+}
+
+.privacy-page :focus-visible {
+    outline: 2px solid var(--color-link);
+    outline-offset: 3px;
+}
+
+@media (max-width: 60em) {
+    .privacy-document {
+        width: calc(100% - 36px);
+    }
+}
+
+@media print {
+    :root {
+        color-scheme: light;
+        --color-background: #FFFFFF;
+        --color-text-primary: #191919;
+        --color-text-secondary: #505050;
+        --color-link: #0E47CB;
+        --type-progress: 0;
+        color: var(--color-text-primary);
+        background: var(--color-background);
+    }
+
+    .privacy-document {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+    }
+
+    /* The SVG measures its text after loading; keep its hidden frame measurable. */
+    .privacy-page .page-header {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .privacy-page .page-footer,
+    .privacy-page .skip-link,
+    .privacy-document .contents {
+        display: none;
+    }
+
+    .privacy-document :is(h1, h2, dt) {
+        break-after: avoid;
+    }
+
+    .privacy-document :is(p, li, dd) {
+        orphans: 3;
+        widows: 3;
+    }
+}
