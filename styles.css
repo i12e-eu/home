@@ -194,14 +194,6 @@ body {
 }
 
 @media (max-width: 48em) {
-    .page-header .theme-control {
-        display: none;
-    }
-
-    .page-header .page-tools {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
     .mission-row {
         grid-template-areas: "mission" "summary";
         grid-template-columns: minmax(0, 1fr);
@@ -220,8 +212,18 @@ body {
 }
 
 @media (max-width: 40em) {
+    .page-header .page-tools {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
     .page-footer {
         grid-template-columns: minmax(0, 1fr);
         gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header .theme-control {
+        display: none;
     }
 }

@@ -375,13 +375,15 @@ main {
     }
 }
 
-@media (max-width: 48em) {
-    .page-header .theme-control {
-        display: none;
-    }
-
+@media (max-width: 40em) {
     .page-header .page-tools {
         grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header .theme-control {
+        display: none;
     }
 }
 
