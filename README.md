@@ -72,6 +72,22 @@ authenticated access, which was unavailable during implementation.
 Preserve unrelated records, including email and verification records. See
 [GitHub's custom-domain instructions](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
+### Manually rebuild GitHub Pages
+
+Once the workflow is on `main`, open **Actions → Rebuild GitHub Pages → Run workflow**.
+Select the `main` branch and click **Run workflow** to request a fresh build of its
+latest commit. The workflow summary links to Actions, where the separate
+**pages build and deployment** run shows whether publication succeeded.
+
+If the manual workflow is waiting for a runner, a maintainer signed in to the
+GitHub CLI with Pages write access can request the build directly.
+
+```sh
+gh api --method POST repos/i12e-eu/home/pages/builds
+```
+
+The Pages build itself can still queue while runners are busy.
+
 ## Secondary domain
 
 GitHub Pages supports one custom apex domain per site, so `i12e.eu` needs an
